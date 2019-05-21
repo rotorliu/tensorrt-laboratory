@@ -26,7 +26,6 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-docker login --username=$oauthtoken --password=bW5rNjgzNTkwNmJwbWI0a2k0bmM0aWJva2w6ZDA1ZDhmZGQtMTMwMy00NjM2LThhMmYtNjc2M2Q2MzkxYTcx nvcr.io
 mkdir -p build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
