@@ -29,6 +29,7 @@
 #include <memory>
 
 #include <NvInfer.h>
+#include <NvInferPlugin.h>
 
 namespace trtlab {
 namespace TensorRT {
