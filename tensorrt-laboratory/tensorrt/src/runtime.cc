@@ -42,6 +42,7 @@ Runtime::Runtime()
       m_NvRuntime(nv_unique(::nvinfer1::createInferRuntime(*(m_Logger.get()))))
 {
     m_Logger->log(::nvinfer1::ILogger::Severity::kINFO, "IRuntime Logger Initialized");
+    initLibNvInferPlugins(m_Logger.get(), "");
 }
 
 Runtime::~Runtime() { DLOG(INFO) << "Destorying Runtime " << this; }
