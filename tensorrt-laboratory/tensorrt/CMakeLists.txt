@@ -21,6 +21,7 @@ target_link_libraries(tensorrt
     ${PROJECT_NAME}::core
     ${PROJECT_NAME}::cuda
     ${TensorRT_LIBRARY}
+    ${TensorRT_PLUGIN_LIBRARY}
 )
 
 target_include_directories(tensorrt
