@@ -34,6 +34,9 @@
 #include <thread>
 #include <unistd.h>
 
+#include <NvCaffeParser.h>
+#include <NiInferPlugin.h>
+
 #include "tensorrt/laboratory/core/affinity.h"
 #include "tensorrt/laboratory/core/memory/allocator.h"
 #include "tensorrt/laboratory/cuda/device_info.h"
@@ -306,8 +309,10 @@ int main(int argc, char* argv[])
         LOG(FATAL) << "Invalid TensorRT Runtime";
     }
 
-    rpcResources->RegisterModel("flowers", runtime->DeserializeEngine(FLAGS_engine));
+    niinfer::NiPluginFactory pluginFactory;
+    rpcResources->RegisterModel("flowers", runtime->DeserializeEngine(FLAGS_engine), &pluginFactory);
     rpcResources->AllocateResources();
+    pluginFactory.destroyPlugin();
 
     // Create Executors - Executors provide the messaging processing resources for the RPCs
     LOG(INFO) << "Initializing Executor";
