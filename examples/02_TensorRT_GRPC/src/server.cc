@@ -310,7 +310,7 @@ int main(int argc, char* argv[])
     }
 
     niinfer::NiPluginFactory pluginFactory;
-    rpcResources->RegisterModel("flowers", runtime->DeserializeEngine(FLAGS_engine), &pluginFactory);
+    rpcResources->RegisterModel("flowers", runtime->DeserializeEngine(FLAGS_engine, &pluginFactory));
     rpcResources->AllocateResources();
     pluginFactory.destroyPlugin();
 
